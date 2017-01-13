@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data name="初始数据">
+
+	<resourcetypes name="资源类型">
+		<resourcetype id="0" name="菜单" description="菜单类型会显示在系统首页左侧菜单中" />
+		<resourcetype id="1" name="功能" description="功能类型不会显示在系统首页左侧菜单中" />
+	</resourcetypes>
+
+	<resources name="资源">
+	<!-- 1 -->
+		<resource id="xtgl" name="系统管理" url="/error/minions.jsp" description="管理系统的资源、角色、机构、用户等信息" seq="0" iconCls="ext-icon-application_view_tile">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<!-- 1.1 -->
+		<resource id="zygl" name="资源管理" url="/securityJsp/base/Resource.jsp" description="管理系统的资源" seq="1" iconCls="ext-icon-newspaper_link" pid="xtgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="zylb" name="资源列表" url="/base/resource!treeGrid" description="查询资源" seq="0" iconCls="ext-icon-bullet_wrench" pid="zygl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="zytj" name="添加资源" url="/base/resource!save" description="添加资源" seq="1" iconCls="ext-icon-bullet_wrench" pid="zygl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="zybj" name="编辑资源" url="/base/resource!update" description="编辑资源" seq="2" iconCls="ext-icon-bullet_wrench" pid="zygl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="zysc" name="删除资源" url="/base/resource!delete" description="删除资源" seq="3" iconCls="ext-icon-bullet_wrench" pid="zygl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="zyck" name="查看资源" url="/base/resource!getById" description="查看资源" seq="4" iconCls="ext-icon-bullet_wrench" pid="zygl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<!-- 1.2 -->
+		<resource id="jsgl" name="角色管理" url="/securityJsp/base/Role.jsp" description="管理系统中用户的角色" seq="2" iconCls="ext-icon-tux" pid="xtgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="jslb" name="角色列表" url="/base/role!grid" description="查询角色列表" seq="0" iconCls="ext-icon-bullet_wrench" pid="jsgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jstj" name="添加角色" url="/base/role!save" description="添加角色" seq="1" iconCls="ext-icon-bullet_wrench" pid="jsgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jsbj" name="编辑角色" url="/base/role!update" description="编辑角色" seq="2" iconCls="ext-icon-bullet_wrench" pid="jsgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jssc" name="删除角色" url="/base/role!delete" description="删除角色" seq="3" iconCls="ext-icon-bullet_wrench" pid="jsgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jsck" name="查看角色" url="/base/role!getById" description="查看角色" seq="4" iconCls="ext-icon-bullet_wrench" pid="jsgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jssq" name="角色授权" url="/base/role!grant" description="角色授权" seq="5" iconCls="ext-icon-bullet_wrench" pid="jsgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<!-- 1.3 -->
+		<resource id="jggl" name="机构管理" url="/securityJsp/base/Organization.jsp" description="管理系统中用户的机构" seq="3" iconCls="ext-icon-group_link" pid="xtgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="jglb" name="机构列表" url="/base/organization!treeGrid" description="查询机构列表" seq="0" iconCls="ext-icon-bullet_wrench" pid="jggl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jgtj" name="添加机构" url="/base/organization!save" description="添加机构" seq="1" iconCls="ext-icon-bullet_wrench" pid="jggl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jgbj" name="编辑机构" url="/base/organization!update" description="编辑机构" seq="2" iconCls="ext-icon-bullet_wrench" pid="jggl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jgsc" name="删除机构" url="/base/organization!delete" description="删除机构" seq="3" iconCls="ext-icon-bullet_wrench" pid="jggl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jgck" name="查看机构" url="/base/organization!getById" description="查看机构" seq="4" iconCls="ext-icon-bullet_wrench" pid="jggl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="jgsq" name="机构授权" url="/base/organization!grant" description="机构授权" seq="5" iconCls="ext-icon-bullet_wrench" pid="jggl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<!-- 1.4 -->
+		<resource id="yhgl" name="用户管理" url="/securityJsp/base/User.jsp" description="管理系统中用户的用户" seq="4" iconCls="ext-icon-user_suit" pid="xtgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="yhlb" name="用户列表" url="/base/user!grid" description="查询用户列表" seq="0" iconCls="ext-icon-bullet_wrench" pid="yhgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="yhtj" name="添加用户" url="/base/user!save" description="添加用户" seq="1" iconCls="ext-icon-bullet_wrench" pid="yhgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="yhbj" name="编辑用户" url="/base/user!update" description="编辑用户" seq="2" iconCls="ext-icon-bullet_wrench" pid="yhgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="yhsc" name="删除用户" url="/base/user!delete" description="删除用户" seq="3" iconCls="ext-icon-bullet_wrench" pid="yhgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="yhck" name="查看用户" url="/base/user!getById" description="查看用户" seq="4" iconCls="ext-icon-bullet_wrench" pid="yhgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="yhjs" name="用户角色" url="/base/user!grantRole" description="编辑用户角色" seq="5" iconCls="ext-icon-bullet_wrench" pid="yhgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="yhjg" name="用户机构" url="/base/user!grantOrganization" description="编辑用户机构" seq="6" iconCls="ext-icon-bullet_wrench" pid="yhgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+	<!-- 2 -->
+		<resource id="xtjk" name="系统监控" url="/error/minions.jsp" description="监控系统运行情况等信息" seq="1" iconCls="ext-icon-monitor">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<!-- 2.1 -->
+		<resource id="monitoring" name="项目监控" url="/monitoring" description="监控项目" seq="1" iconCls="ext-icon-monitor_error" pid="xtjk">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<!-- 2.2 -->
+		<resource id="druid" name="数据源监控" url="/druid" description="监控数据源" seq="2" iconCls="ext-icon-monitor_link" pid="xtjk">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<!-- 2.3 -->
+		<resource id="actionConfigBrowser" name="Action映射监控" url="/config-browser/showConstants.myhope" description="Action映射情况监控" seq="3" iconCls="ext-icon-monitor_lightning" pid="xtjk">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<!-- 2.4 -->
+		<resource id="online" name="用户登录历史监控" url="/securityJsp/base/Online.jsp" description="监控用户登录、注销" seq="4" iconCls="ext-icon-chart_line" pid="xtjk">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="onlineGrid" name="用户登录历史列表" url="/base/online!grid" description="用户登录、注销历史记录列表" seq="0" iconCls="ext-icon-bullet_wrench" pid="online">
+			<resourcetype id="1" name="功能" />
+		</resource>
+	<!-- 3 -->
+		<resource id="xtbb" name="系统报表" url="/error/minions.jsp" description="查看系统相关报表图标" seq="2" iconCls="ext-icon-chart_curve">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<!-- 3.1 -->
+		<resource id="userCreateDatetimeChart" name="注册时间分布" url="/securityJsp/base/chart/userCreateDatetimeChart.jsp" description="用户注册时间分布报表" seq="1" iconCls="ext-icon-chart_bar" pid="xtbb">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<!-- 3.2 -->
+		<resource id="userRoleChart" name="用户角色分布" url="/securityJsp/base/chart/userRoleChart.jsp" description="用户角色分布" seq="2" iconCls="ext-icon-chart_pie" pid="xtbb">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+	<!-- 4 -->
+		<resource id="xmgl" name="项目管理" url="/error/minions.jsp" description="项目的维护、跟踪、统计、分析" seq="3" iconCls="ext-icon-chart_organisation">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<!-- 4.1 -->
+		<resource id="xmwh" name="项目维护" url="/securityJsp/project/project.jsp" description="项目的维护" seq="1" iconCls="ext-icon-application_cascade" pid="xmgl">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="xmlb" name="项目列表" url="/project!grid" description="查询项目列表" seq="0" iconCls="ext-icon-bullet_wrench" pid="xmwh">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="xmtj" name="添加项目" url="/project!save" description="添加项目" seq="1" iconCls="ext-icon-bullet_wrench" pid="xmwh">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="xmbj" name="编辑项目" url="/project!update" description="编辑项目" seq="2" iconCls="ext-icon-bullet_wrench" pid="xmwh">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="xmsc" name="删除项目" url="/project!delete" description="删除项目" seq="3" iconCls="ext-icon-bullet_wrench" pid="xmwh">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="xmck" name="查看项目" url="/project!getById" description="查看项目" seq="4" iconCls="ext-icon-bullet_wrench" pid="xmwh">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="xmyh" name="项目用户" url="/project!grantUsers" description="编辑项目用户" seq="5" iconCls="ext-icon-bullet_wrench" pid="xmwh">
+			<resourcetype id="1" name="功能" />
+		</resource>
+	<!-- 5 -->
+		<resource id="wdgz" name="我的工作" url="/error/minions.jsp" description="工作的记录、整理、统计、分析" seq="4" iconCls="ext-icon-book_open">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<!-- 5.1 -->
+		<resource id="gzjl" name="工作记录" url="/securityJsp/workcalendar/workCalendar.jsp" description="对工作进行录入" seq="1" iconCls="ext-icon-spellcheck" pid="wdgz">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="gzjlck" name="查看工作记录" url="/workcalendar!getWorkcalendars" description="查看工作记录" seq="0" iconCls="ext-icon-bullet_wrench" pid="gzjl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="gzjltj" name="添加工作记录" url="/workcalendar!addEvent" description="添加工作记录" seq="1" iconCls="ext-icon-bullet_wrench" pid="gzjl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="gzjlbj" name="编辑工作记录" url="/workcalendar!update" description="修改工作记录" seq="2" iconCls="ext-icon-bullet_wrench" pid="gzjl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="gzjlsc" name="删除工作记录" url="/workcalendar!delete" description="删除工作记录" seq="3" iconCls="ext-icon-bullet_wrench" pid="gzjl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<!-- 5.2 -->
+		<resource id="gzfx" name="工作分析" url="/securityJsp/workcalendar/workChart.jsp" description="对指定的时间段所做的工作进行图表分析" seq="2" iconCls="ext-icon-lightbulb" pid="wdgz">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<!-- 5.2.1 -->
+		<resource id="gzfxxm" name="工作项目分布报表" url="/workcalendar!workChart_project" description="工作项目分布报表" seq="0" iconCls="ext-icon-bullet_wrench" pid="gzfx">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<!-- 5.2.2 -->
+		<resource id="gzfxlb" name="工作类别分布报表" url="/workcalendar!workChart_type" description="工作类别分布报表" seq="1" iconCls="ext-icon-bullet_wrench" pid="gzfx">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<!-- 5.2.3 -->
+		<resource id="gzfxzdyg" name="指定员工工作分析" url="/workcalendar!workChartByUser" description="指定员工工作分析" seq="2" iconCls="ext-icon-bullet_wrench" pid="gzfx">
+			<resourcetype id="1" name="功能" />
+		</resource>
+	<!-- 6 -->
+		<resource id="pbkq" name="排班考勤" url="/error/minions.jsp" description="班次维护、排班管理及考勤相关的功能" seq="5" iconCls="ext-icon-application_view_icons">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<!-- 6.1 -->
+		<resource id="bcsz" name="班次设置" url="/securityJsp/workschedule/schedule.jsp" description="班次的设置" seq="1" iconCls="ext-icon-application_add" pid="pbkq">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<!-- 6.1.1 -->
+		<resource id="bclb" name="班次列表" url="/schedule!grid" description="查询班次列表" seq="0" iconCls="ext-icon-bullet_wrench" pid="bcsz">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="bctj" name="添加班次" url="/schedule!save" description="添加班次" seq="1" iconCls="ext-icon-bullet_wrench" pid="bcsz">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="bcbj" name="编辑班次" url="/schedule!update" description="编辑班次" seq="2" iconCls="ext-icon-bullet_wrench" pid="bcsz">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="bcsc" name="删除班次" url="/schedule!delete" description="删除班次" seq="3" iconCls="ext-icon-bullet_wrench" pid="bcsz">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="bcck" name="查看班次" url="/schedule!getById" description="查看班次" seq="4" iconCls="ext-icon-bullet_wrench" pid="bcsz">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="bcjg" name="班次机构" url="/schedule!grantOrganization" description="班次机构" seq="5" iconCls="ext-icon-bullet_wrench" pid="bcsz">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<!-- 6.1.2 -->
+		<resource id="bcgzlb" name="班次规则列表" url="/scheduledetail!grid" description="查询班次规则列表" seq="5" iconCls="ext-icon-bullet_wrench" pid="bcsz">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="bcgztj" name="添加班次规则" url="/scheduledetail!save" description="添加班次规则" seq="6" iconCls="ext-icon-bullet_wrench" pid="bcsz">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="bcgzbj" name="编辑班次规则" url="/scheduledetail!update" description="编辑班次规则" seq="7" iconCls="ext-icon-bullet_wrench" pid="bcsz">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="bcgzsc" name="删除班次规则" url="/scheduledetail!delete" description="删除班次规则" seq="8" iconCls="ext-icon-bullet_wrench" pid="bcsz">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<resource id="bcgzck" name="查看班次规则" url="/scheduledetail!getById" description="查看班次规则" seq="9" iconCls="ext-icon-bullet_wrench" pid="bcsz">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<!-- 6.2 -->
+		<resource id="pbgl" name="排班管理" url="/securityJsp/workschedule/workSchedule.jsp" description="排班管理" seq="2" iconCls="ext-icon-color_swatch" pid="pbkq">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="pbglck" name="查看排班管理" url="/workschedule!getDates" description="查看排班管理" seq="1" iconCls="ext-icon-bullet_wrench" pid="pbgl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<!-- 6.3 -->
+		<resource id="kqjl" name="考勤记录" url="/securityJsp/workschedule/attendance.jsp" description="考勤记录" seq="3" iconCls="ext-icon-clock" pid="pbkq">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+		<resource id="kqjllb" name="考勤记录列表" url="/attendance!grid" description="考勤记录列表" seq="1" iconCls="ext-icon-bullet_wrench" pid="kqjl">
+			<resourcetype id="1" name="功能" />
+		</resource>
+		<!-- 6.4 -->
+		<resource id="wdcq" name="我的出勤" url="/securityJsp/workschedule/myAttendance.jsp" description="我的出勤" seq="4" iconCls="ext-icon-status_away" pid="pbkq">
+			<resourcetype id="0" name="菜单" />
+		</resource>
+
+	</resources>
+
+	<roles name="角色">
+		<role id="0" name="超管" description="拥有系统所有权限" seq="0" />
+		<!--
+		<role id="1" name="Guest" description="只有查看权限" seq="1" />
+		<role id="2" name="资源管理角色" description="只有资源管理权限" seq="2" />
+		<role id="3" name="角色管理角色" description="只有角色管理权限" seq="3" />
+		<role id="4" name="机构管理角色" description="只有机构管理权限" seq="4" />
+		<role id="5" name="用户管理角色" description="只有用户管理权限" seq="5" />
+		<role id="6" name="系统监控角色" description="只有系统监控权限" seq="6" />
+		<role id="7" name="注册用户角色" description="只有查看权限和业务功能权限" seq="7" />
+		-->
+		<role id="1" name="注册用户角色" description="注册用户角色" seq="1" />
+	</roles>
+
+	<roles_resources name="角色和资源对应关系">
+		<!--
+		<role id="1" name="Guest角色">
+			<resource id="xtgl" name="系统管理" />
+
+			<resource id="zygl" name="资源管理" />
+			<resource id="zylb" name="资源列表" />
+			<resource id="zyck" name="查看资源" />
+
+			<resource id="jsgl" name="角色管理" />
+			<resource id="jslb" name="角色列表" />
+			<resource id="jsck" name="查看角色" />
+
+			<resource id="jggl" name="机构管理" />
+			<resource id="jglb" name="机构列表" />
+			<resource id="jgck" name="查看机构" />
+
+			<resource id="yhgl" name="用户管理" />
+			<resource id="yhlb" name="用户列表" />
+			<resource id="yhck" name="查看用户" />
+
+		</role>
+
+		<role id="2" name="资源管理角色">
+			<resource id="zygl" name="资源管理" />
+			<resource id="zylb" name="资源列表" />
+			<resource id="zytj" name="添加资源" />
+			<resource id="zybj" name="编辑资源" />
+			<resource id="zysc" name="删除资源" />
+			<resource id="zyck" name="查看资源" />
+		</role>
+
+		<role id="3" name="角色管理角色">
+			<resource id="jsgl" name="角色管理" />
+			<resource id="jslb" name="角色列表" />
+			<resource id="jstj" name="添加角色" />
+			<resource id="jsbj" name="编辑角色" />
+			<resource id="jssc" name="删除角色" />
+			<resource id="jsck" name="查看角色" />
+			<resource id="jssq" name="角色授权" />
+		</role>
+
+		<role id="4" name="机构管理角色">
+			<resource id="jggl" name="机构管理" />
+			<resource id="jglb" name="机构列表" />
+			<resource id="jgtj" name="添加机构" />
+			<resource id="jgbj" name="编辑机构" />
+			<resource id="jgsc" name="删除机构" />
+			<resource id="jgck" name="查看机构" />
+			<resource id="jgsq" name="机构授权" />
+		</role>
+
+		<role id="5" name="用户管理角色">
+			<resource id="yhgl" name="用户管理" />
+			<resource id="yhlb" name="用户列表" />
+			<resource id="yhtj" name="添加用户" />
+			<resource id="yhbj" name="编辑用户" />
+			<resource id="yhsc" name="删除用户" />
+			<resource id="yhck" name="查看用户" />
+			<resource id="yhjs" name="用户角色" />
+			<resource id="yhjg" name="用户机构" />
+		</role>
+
+		<role id="6" name="系统监控角色">
+			<resource id="xtjk" name="系统监控" />
+
+			<resource id="monitoring" name="项目监控" />
+			<resource id="druid" name="数据源监控" />
+			<resource id="actionConfigBrowser" name="Action映射监控" />
+			<resource id="online" name="用户登录历史监控" />
+			<resource id="onlineGrid" name="用户登录历史列表" />
+		</role>
+		
+		<role id="7" name="注册用户角色">
+			<resource id="xtgl" name="系统管理" />
+
+			<resource id="zygl" name="资源管理" />
+			<resource id="zylb" name="资源列表" />
+			<resource id="zyck" name="查看资源" />
+
+			<resource id="jsgl" name="角色管理" />
+			<resource id="jslb" name="角色列表" />
+			<resource id="jsck" name="查看角色" />
+
+			<resource id="jggl" name="机构管理" />
+			<resource id="jglb" name="机构列表" />
+			<resource id="jgck" name="查看机构" />
+
+			<resource id="yhgl" name="用户管理" />
+			<resource id="yhlb" name="用户列表" />
+			<resource id="yhck" name="查看用户" />
+			
+			<resource id="wdgz" name="我的工作" />
+
+			<resource id="gzjl" name="工作记录" />
+			<resource id="gzjlck" name="查看工作记录" />
+			<resource id="gzjltj" name="添加工作记录" />
+			<resource id="gzjlbj" name="编辑工作记录" />
+			<resource id="gzjlsc" name="删除工作记录" />
+		
+		</role>
+		-->
+		<role id="1" name="注册用户角色">
+			<resource id="xtgl" name="系统管理" />
+			<!--
+			<resource id="zygl" name="资源管理" />
+			<resource id="zylb" name="资源列表" />
+			<resource id="zyck" name="查看资源" />
+			
+			<resource id="jsgl" name="角色管理" />
+			<resource id="jslb" name="角色列表" />
+			<resource id="jsck" name="查看角色" />
+
+			<resource id="jggl" name="机构管理" />
+			<resource id="jglb" name="机构列表" />
+			<resource id="jgck" name="查看机构" />
+			-->
+			<resource id="yhgl" name="用户管理" />
+			<resource id="yhlb" name="用户列表" />
+			<resource id="yhck" name="查看用户" />
+			
+			<resource id="xmgl" name="项目管理" />
+			<resource id="xmwh" name="项目维护" />
+			<resource id="xmlb" name="项目列表" />
+			<resource id="xmck" name="查看项目" />
+			<resource id="xmyh" name="项目用户" />
+			
+			<resource id="wdgz" name="我的工作" />
+
+			<resource id="gzjl" name="工作记录" />
+			<resource id="gzjlck" name="查看工作记录" />
+			<resource id="gzjltj" name="添加工作记录" />
+			<resource id="gzjlbj" name="编辑工作记录" />
+			<resource id="gzjlsc" name="删除工作记录" />
+			<resource id="gzfx" name="工作分析" />
+			<resource id="gzfxxm" name="工作项目分布报表" />
+			<resource id="gzfxlb" name="工作类别分布报表" />
+		</role>
+	</roles_resources>
+
+	<organizations name="机构">
+		<organization id="0" name="一级机构" address="机构地址" code="机构编号" iconCls="ext-icon-brick" seq="0" />
+		<organization id="1" name="注册用户机构" address="机构地址" code="机构编号" iconCls="ext-icon-brick" seq="1" pid="0"/>
+	</organizations>
+
+	<organizations_resources name="机构和资源对应关系">
+		<organization id="0" name="一级机构">
+			<resource id="xtgl" name="系统管理" />
+
+			<resource id="zygl" name="资源管理" />
+			<resource id="zylb" name="资源列表" />
+			<resource id="zyck" name="查看资源" />
+
+			<resource id="jsgl" name="角色管理" />
+			<resource id="jslb" name="角色列表" />
+			<resource id="jsck" name="查看角色" />
+
+			<resource id="jggl" name="机构管理" />
+			<resource id="jglb" name="机构列表" />
+			<resource id="jgck" name="查看机构" />
+
+			<resource id="yhgl" name="用户管理" />
+			<resource id="yhlb" name="用户列表" />
+			<resource id="yhck" name="查看用户" />
+		</organization>
+	</organizations_resources>
+
+	<users name="用户">
+		<user id="0" loginname="admin" pwd="admin" name="超级管理员" sex="1" age="24" />
+		<!--
+		<user id="1" loginname="guest" pwd="0" name="guest" sex="1" age="20" />
+		<user id="2" loginname="admin1" pwd="0" name="资源管理员" sex="0" age="20" />
+		<user id="3" loginname="admin2" pwd="0" name="角色管理员" sex="0" age="20" />
+		<user id="4" loginname="admin3" pwd="0" name="机构管理员" sex="0" age="20" />
+		<user id="5" loginname="admin4" pwd="0" name="用户管理员" sex="0" age="20" />
+		<user id="6" loginname="admin5" pwd="0" name="系统监控员" sex="0" age="20" />
+		-->
+	</users>
+
+	<users_roles name="用户和角色对应关系">
+		<!--
+		<user id="1" loginname="guest">
+			<role id="1" name="Guest角色" />
+		</user>
+		<user id="2" loginname="admin1">
+			<role id="2" name="admin1" />
+		</user>
+		<user id="3" loginname="admin2">
+			<role id="3" name="admin2" />
+		</user>
+		<user id="4" loginname="admin3">
+			<role id="4" name="admin3" />
+		</user>
+		<user id="5" loginname="admin4">
+			<role id="5" name="admin4" />
+		</user>
+		<user id="6" loginname="admin5">
+			<role id="6" name="admin5" />
+		</user>
+		-->
+	</users_roles>
+
+	<users_organizations name="用户和机构的关系">
+		<!--
+		<user id="1" loginname="guest">
+			<organization id="0" name="一级机构" />
+		</user>
+		-->
+	</users_organizations>
+
+</data>

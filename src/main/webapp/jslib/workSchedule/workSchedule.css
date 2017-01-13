@@ -1,0 +1,30 @@
+﻿a{cursor:pointer;}
+.date_div{float:right;}
+.scheduleDiv{margin-top:0px;}
+.scheduleTd{}
+.deleteSchedule{
+	float:right;
+	display:block;
+}
+.sche_name{display:none;}
+.sche_color{display:none;}
+.sche_type{display:none;}
+.sche_workTime{display:none;}
+.editDiv{
+    display:none;
+    background-color:#E7E4F6;
+    padding-right:8px; 
+	padding-bottom:8px; 
+	width:200px; 
+	min-height:80px; 
+	position: absolute; 
+	z-index:999;
+}
+.selectScheduleDiv{
+	margin-left:8px; 
+	margin-top:5px; 
+	float:left; 
+	cursor:pointer; 
+	width:90px; 
+	overflow:hidden;
+}

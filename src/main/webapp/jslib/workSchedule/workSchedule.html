@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script src="jquery-1.8.2.min.js"></script>
+<script src="workSchedule.js"></script>
+<link href="workSchedule.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+	/**
+	 *  ajax请求排班数据，并刷新数据展示
+	 */
+	function ajaxGetSchedule(sDate, eDate) {
+		/**
+		 *  param:Date startDate周一,Date endDate周日
+		 */
+		var url = "/auxilia/findTemplateRItemList.action?startDate=" + sDate
+				+ "&endDate=" + eDate;
+		$.ajax({
+			type : "post",
+			contentType : "application/json;charset=utf-8",
+			dataType : "json",
+			url : url,
+			async : false,
+			success : function(data) {
+				if ("" != data) { // 返回含有排班、员工、班次信息的json数据
+					init(data, sDate);
+				}
+			}
+		});
+	}
+
+	/**
+	 * ajax新增排班保存到数据库
+	 */
+	function ajaxScheduleAdd(userId, date, scheduleId) {
+		/**
+		 *  param:String user_id 员工id、Date date 日期、String schedule_id 班次id
+		 */
+		var url = "/auxilia/findTemplateRItemList.action?user_id=" + userId
+				+ "&date=" + date + "&schedule_id=" + scheduleId;
+		$.ajax({
+			type : "post",
+			contentType : "application/json;charset=utf-8",
+			dataType : "text",
+			url : url,
+			async : false,
+			success : function(data) {
+				if ("error" != data) {
+					// 新增排班数据到页面中
+					addSchedule(data, scheduleId); //param: 排班id：data；班次id：scheduleId。
+				} else {
+					alert("添加失败！"); // 添加失败
+				}
+			}
+		});
+	}
+
+	/**
+	 * ajax删除数据库中排班信息
+	 */
+	function ajaxScheduleDelete(workSche_id) {
+		/**
+		 *  param: String schedule_id 排班id
+		 */
+		var url = "/auxilia/findTemplateRItemList.action?schedule_id="
+				+ workSche_id;
+		$.ajax({
+			type : "post",
+			contentType : "application/json;charset=utf-8",
+			dataType : "text",
+			url : url,
+			async : false,
+			success : function(data) {
+				if ("success" == data) {
+					// 将排班数据从页面中删除
+					delSchedule(workSche_id); // 删除成功
+				} else {
+					alert("删除失败！"); // 删除失败
+				}
+			}
+		});
+	}
+</script>
+</head>
+<body>
+	<div class="wtClass">
+		<div>
+			<div id="littleC" style="width: 196px;height: 180px"></div>
+		</div>
+		<div>
+			<a href="javascript:void(0);" class="editText"
+				onclick="editSchedule();"> 开始编辑 </a> <a href="javascript:void(0);"
+				class="" onclick="autoSchedule();"> 自动排班 </a>
+		</div>
+		<div class="date_div">
+			<a href="javascript:void(0);" class="" onclick="PreWeekSchedule();">
+				上一周 </a> <a href="javascript:void(0);" class=""
+				onclick="nowWeekSchedule();"> 本周 </a> <a href="javascript:void(0);"
+				class="" onclick="NextWeekSchedule();"> 下一周 </a>
+		</div>
+	</div>
+	<div>
+		<div id='calendar_head' class="wtClass">本周 (2016 年 1 月 4 日 - 2016 年 1 月 10 日)排班表</div>
+		<table id="schedule_table" class="schedule_table"
+			style="width:1500px;height:auto;">
+			<thead>
+				<tr class="wtClass">
+					<th width="180">姓名</th>
+					<th width="180" id="weekTh_0"></th>
+					<th width="180" id="weekTh_1"></th>
+					<th width="180" id="weekTh_2"></th>
+					<th width="180" id="weekTh_3"></th>
+					<th width="180" id="weekTh_4"></th>
+					<th width="180" id="weekTh_5"></th>
+					<th width="180" id="weekTh_6"></th>
+					<th width="180">累计时间（小时）</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
